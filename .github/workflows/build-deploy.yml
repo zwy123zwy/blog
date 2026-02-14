@@ -9,6 +9,10 @@ on:
 env: # 设置环境变量
   TZ: Asia/Shanghai # 时区（设置时区可使页面中的`最近更新时间`使用时区时间）
 
+# 授予写入仓库的权限（部署到 gh-pages 分支需要）
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,12 +26,11 @@ jobs:
           node-version: 16
       - run: |
           npm install
-          yarn build
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
-        env: # 设置环境变量
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # toKen私密变量
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           folder: docs/.vuepress/dist
-          branch: gh-pages # 部署到的分支
+          branch: gh-pages

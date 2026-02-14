@@ -21,20 +21,20 @@ module.exports = [
       },
     },
   ],
-  [
-    "vuepress-plugin-vssue-global",
-    {
-      platform: "github",
-      title: "[Comment]<%- frontmatter.title %>",
-      needComments: true,
-      // 其他的 Vssue 配置
-      autoCreateIssue: true,
-      clientId: "adb9fb0ac1159e00ce7f",
-      clientSecret: "27da8dc85f808c2bd1b6e44da5ae69c4ddf17d8d",
-      owner: "eryajf",
-      repo: "vdoing-template",
-    },
-  ],
+  // [
+  //   "vuepress-plugin-vssue-global",
+  //   {
+  //     platform: "github",
+  //     title: "[Comment]<%- frontmatter.title %>",
+  //     needComments: true,
+  //     // 其他的 Vssue 配置
+  //     autoCreateIssue: true,
+  //     clientId: "Ov23liOAACHF5jMCFDiU",
+  //     clientSecret: "ccc7a862953427891a1635aab01c13aab06f61e3",
+  //     owner: "zwy123zwy",
+  //     repo: "blog",
+  //   },
+  // ],
   [
     '@vuepress/last-updated', // "上次更新"时间格式
     {
